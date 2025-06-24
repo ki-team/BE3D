@@ -1,0 +1,52 @@
+
+```
+Include Devkit: BasicNode			// Pulls Template from the Dev Kit
+Include Engine: DeltaTime			// Accesses the Live Data at the Instances' DeltaTime Float, Is *technically* just a Pointer to that address
+Include Engine: Input As IO			// Engine and Devkit specifiers are basically the difference ot #include's <> and "" Options, But instead changes the Include Source's Directory to a fixed one 
+
+Define MODE_RUN As 12.0
+Define MODE_WALK As 10.0
+Define MODE_CRAWL As 5.5
+
+Class Player : Extends BasicNode 
+{
+	Enum SpeedModes = {
+		MODE_RUN,
+		MODE_WALK,
+		MODE_CRAWL
+	}
+
+	Float Speed = (SpeedModes)
+
+	Start() {
+		
+	}
+
+	Input() {
+
+	}
+
+	Periodic() {
+		
+	}
+}
+```
+IN C/C++
+```
+#include "BasicNode.h"
+#include "Input.h"
+
+class Player : BasicNode 
+{
+	enum SpeedModes = {
+		MODE_RUN,
+		MODE_WALK,
+		MODE_CRAWL
+	};
+	SpeedModes mode
+
+	float Speed = mode;
+
+
+
+}
